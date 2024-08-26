@@ -1,6 +1,15 @@
 Links a los enunciados:
 
  Parciales:
+ 
+Nombre: pokemon
+- Año 2024: https://docs.google.com/document/d/1_B3EWYrNSmxOmfMxH8Gtpi3ViG5lWfQgwSq_dSWxTOk/edit
+ 
+Nombre: logicomilona
+- Año 2024 : https://docs.google.com/document/u/1/d/e/2PACX-1vQtK8cggPYEoMIor1iNoc1o2hNElS6aDvlC7oys2MU1Z0D9uz8OQN5QXNXr5VlNkpIizr4PU90J_76n/pub
+
+Nombre: simulacroParcial2024
+- Año 2024: https://docs.google.com/document/u/1/d/e/2PACX-1vQtK8cggPYEoMIor1iNoc1o2hNElS6aDvlC7oys2MU1Z0D9uz8OQN5QXNXr5VlNkpIizr4PU90J_76n/pub
 
 Nombre: parqueDeAtracciones
 - Año 2024: https://docs.google.com/document/d/139S8G0vwD5wJNfb8UqsH5BV75d7sfUk9ywdvFCXRcLI/edit#heading=h.b7fwzcvrhqzl
