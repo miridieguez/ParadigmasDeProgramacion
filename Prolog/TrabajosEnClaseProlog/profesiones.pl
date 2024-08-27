@@ -1,4 +1,6 @@
 
+% enunciado en este power https://docs.google.com/presentation/d/1SOjkU8hsNNN9_vk_dwJmMSlBAbewS1Rb5x32h27V6xw/edit#slide=id.g903488ca2e_0_43
+
 % trabajador(nombre, profesion(experiencia,area) ).
 trabajador(migue,profesion(maestro,cocinero)).
 trabajador(carla,profesion(maestra,alquimista)).
