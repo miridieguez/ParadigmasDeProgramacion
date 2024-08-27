@@ -1,0 +1,371 @@
+Enunciados Tps
+
+Tp1:
+
+1. [Repasando funciones] Números 🔢
+Empecemos definiendo algunas funciones simples sobre números:
+
+siguiente: toma un número como parámetro y devuelve ese número + 1.
+esPositivo: nos dice si un número es mayor a 0 o no. Es falso para 0.
+inversa: aplicar la inversa a un número nos da como resultado 1 dividido ese número. Por ejemplo, la inversa de 2 es 0.5 porque 1/2 es 0.5. Para está función, también tienen que escribir el tipo ustedes
+
+2. [Empezando a testear] Temperaturas 🌡️
+
+Las temperaturas en diferentes países se miden en grados, pero no todos usan el mismo sistema de medida. En la mayor partedel el mundo usamos los grados Celsius (°C) pero en algunos países como en Estados Unidos se usan los grados Farenheit (°F). ¿Cómo se pasa de celsius a farenheit? Usando la siguiente formula:
+
+GradosFarenheit = GradosCelsius × 1.8 + 32
+Y para el otro lado se puede obtener despejando GradosCelsius:
+
+GradosCelsius = (GradosFarenheit - 32) / 1.8
+Entonces, vamos a implementar unas funciones que hagan esto por nosotros:
+
+celsiusAFarenheit: toma una temperatura (que la vamos a representar como un número) en celsius, y la convierte a farenheit.
+farenheitACelsius: está función hace el camino inverso a la anterior, le damos una temperatura en farenheit y la pasa a celsius.
+Ahora, queremos una función a la cuál podamos preguntarle si hace frío o no. Nuestro criterio va a ser que hace frío sólo si la temperatura es menor o igual a 8 grados Celsius. Entonces, definamos:
+
+haceFrioCelsius: recibe una temperatura (en Celsius) y debería ser verdadero si hace igual o menos de 8 grados Celsius.
+haceFrioFarenheit: ésta recibe la temperatura como parámetro en Farenheit, pero el criterio para saber si hace frío es el mismo de antes.
+Para las funciones de este punto hay que completar y/o escribir los tests. Para haceFrioCelsius y haceFrioFarenheit también tienen que escribir el tipo ustedes.
+
+tp 2:
+
+1. [Guardas] Más números! 📈
+Acá vamos a definir un par de funciones muy útiles, max y min.
+
+max toma dos valores como parámetro y nos devuelve aquel que sea mas grande
+min toma lo mismo que max pero nos devuelve el que sea mas chico. Entonces, yo puedo hacer min 2 3 y el resultado sería 2, y si hago max 3 15.5 el resultado debería ser 15.5.
+Como estas funciones ya existen en Haskell, pero queremos definirlas igual para practicar, vamos a ponerles de nombre max' y min' (el ' es un caracter valido para las funciones en Haskell), y en este ejercicio no vale definirlas como max' = max ;).
+
+Para las funciones de este punto hay que escribir los tests.
+1.5⚡Bonus OPCIONAL⚡
+cuantosDiasTiene, que dado un año nos devuelve la cantidad de días de ese año. Un año tiene 365 días si no es bisiesto y 366 si sí lo es.
+En un supermercado hay una promoción al comprar al por mayor, entonces queremos definir una función precioTotal que represente esa promoción. Las reglas de la misma son, dado el valor unitario del producto y la cantidad de productos comprados:
+Si se compraron menos de 3, el total es el precio del producto por la cantidad.
+Si se compraron entre 3 y 10, el total es el 90% del precio del producto por la cantidad.
+Si se compraron 10 o mas, el total es el 70% del precio del producto por la cantidad.
+2. Pinos 🌲
+En una plantación de pinos, de cada árbol se conoce la altura expresada en metros. El peso de un pino se puede calcular a partir de la altura así:
+
+3 kg por cada centímetro hasta 3 metros,
+2 kg por cada centímetro arriba de los 3 metros.
+
+
+Por ejemplo:
+
+2 metros pesan 600 kg, porque 200 * 3 = 600
+5 metros pesan 1300 kg, porque los primeros 3 metros pesan 900 kg y los siguientes 2 pesan los 400 restantes.
+
+
+Los pinos se usan para llevarlos a una fábrica de muebles, a la que le sirven árboles de entre 400 y 1000 kilos, un pino fuera de este rango no le sirve a la fábrica. Entonces, un pino de 2 metros serviría porque pesa 600kg, pero un pino de 5 metros no serviría porque pesa 1300kg.
+
+Vamos a definir las siguientes funciones, y en este punto, todas van a ser tipadas por ustedes:
+
+pesoPino: recibe la altura de un pino en metros y devuelve su peso.
+esPesoUtil: recibe un peso en kg y responde si un pino de ese peso le sirve a la fábrica
+sirvePino: recibe la altura de un pino y responde si un pino de ese peso le sirve a la fábrica.
+Para las funciones de este punto hay que escribir los tests.
+
+Tp 3:
+
+1. Tuplas
+first, second y third: fst y snd no funcionan con tuplas de 3 parámetros porque una tupla de 3 parámetros y una de dos van a ser de diferente tipo (pueden probarlo en stack ghci). Definan las funciones first, second y third que dada una tupla de tres parámetros dan respectivamente el primer, segundo y tercer valor. Por ej.
+> first (1, "dos", 3)
+1
+> second (1, "dos", 3)
+"dos"
+> third (1, "dos", 3)
+3
+swap: recibe una tupla de dos elementos cualquiera y devuelve otra tupla con los elementos cambiados de orden. Por ej.
+> swap ("hola", 5)
+(5, "hola")
+divisionConResto: las tuplas también son una buena manera de representar una función donde el resultado representa "dos cosas" a la vez. Entonces, definan una función que dado un dividendo y un divisor, te da la división entera entre ellos Y también el resto de esa división entera. Pueden usar div y rem para implementarla. Ej:
+> divisionConResto 5 3
+(1, 2)
+2. Títulos
+
+
+Este punto va a estar un poco menos guiado, acá ustedes van a tener que definir como se crean los valores a usar.
+
+Tests
+Como van a estar definiendo ustedes como crear los datos, también van a tener que definir ustedes las implementaciones de los tests a realizar. ¿Cómo se hace esto? En el archivo test/Spec.hs, cada it "..." $ do es un test, en la línea de abajo de eso tienen que escribir el cuerpo del mismo. Los nombres de los tests para esta parte y la siguiente van a estar hecha y, así que solo tienen que completar los it que están vacíos con un ejemplo de lo que diga el título. El formato de todos los tests que van a escribir va a ser:
+
+aplicacion de funcion `shouldBe` resultadoEsperado
+Ejemplo de un test de puntos anteriores.:
+
+ it "divisionConResto de un dividendo no divisible por su divisor, me da el resultado de la division y el resto" $ do
+    divisionConResto 4 3 `shouldBe` (1, 1)
+(divisionConResto 4 3) es el ejemplo a probar, y (1, 1) es el resultado esperado para ese ejemplo.
+
+Nota: para los primeros tests que tienen que escribir ustedes, hay ejemplos que pueden trasladar a su código como comentarios, para los siguientes tienen que pensar ustedes ejemplos que tengan sentido.
+
+Implementación
+Ahora sí, queremos representar personas que están estudiando diferentes carreras, y nos interesa saber su nombre, apellido, edad y título. Los títulos que queremos registrar en el sistema son Ingenieria, Licenciatura y Doctorado. Tambíen queremos contemplar el caso en el que aun no se tiene un título.
+
+Lo que vamos a querer poder hacer con estudiantes es pedir:
+
+edad: nos da la edad de cualquier estudiante que pasemos.
+nombreCompleto: si pasamos a alguien que no tiene título es su nombre + su apellido (separados por espacio), si pasamos a alguien con algún título, se le agrega la abreviación del título adelante. Por ej, si tenemos a Ayelen García que es ingeniera, y le pedimos su nombre completo, nos debería dar "Ing. Ayelen García". Las abreviaciones para cada título son:
+Ingenieria -> Ing.
+Licenciatura -> Lic.
+Doctorado -> Doc.
+recibirse: recibe como parámetro un título y a una persona, y retorna a la persona luego de recibirse, que es la persona con el título que se pasó por parámetro e incrementando su edad en los años que tarda el título en obtenerse. Para los títulos que tenemos, los tiempos son:
+Ingenieria -> 6 años
+Licenciatura -> 4 años
+Doctorado -> 2 años
+Nota: Si pasamos como parámetro a alguien que ya tiene un título, solo se reemplaza por el título más nuevo, así que no es necesario chequear que no tenga título para empezar.
+
+3. Pregunta:
+Si yo tengo a un estudiante que tiene 26 años, se llama Juan Fernandes y tiene título de Ingeniería, y en ghci evaluo el código para obtener a juan recibido con un doctorado y evaluo edad juan, ¿cuantos años me va a dar? ¿Por qué? (contestar eso en un comentario en el archivo)
+
+4. Punto BONUS: Devs (esto es opcional)
+Para realizar este punto va a haber que modificar un poco lo realizado en el punto 2. Se agrega un nuevo tipo de título, Dev (Developer).
+
+El tema es que cuando se habla de este título siempre se lo acompaña de la experiencia que se tiene trabajando en el área, así que el título debería ir acompañado de años de experiencia. No es lo mismo el título de Dev con 0 años de experiencia que el título de Dev con 5 años de experiencia.
+
+Recibirse de Dev con 0 años de experiencia lleva 2 años de estudio. Pero recibirse de Dev con más años de experiencia, lleva 2 años de estudio + esa cantidad de años de experiencia (lleva más recibirse cuando estás trabajando :().
+
+Además, la abreviación que se agrega al nombre depende de la cantidad de años de experiencia que se lleva como Dev: Para Devs con 0 o 1 años de experiencia, la abreviación que se usa es "Dev Jr.", para Devs con más de 1 pero menos de 5 años de experiencia, la abreviación es "Dev Ssr.". Para Devs con más de 5 años de experiencia se usa "Dev Sr.".
+
+Finalmente, se puede ganar experiencia luego de haberse recibido de Dev, así que queremos plasmar esto con la siguiente función:
+
+practicar: que recibe una persona y una cantidad de años de práctica y nos devuelve a la persona envejecida en esa cantidad de años y aparte:
+si era Dev, aumenta sus años de experiencia en esos años de práctica.
+si su título era cualquier otro o no tenía, no cambia nada más.
+
+Tp 4:
+
+Parte 1: recursividad
+Definir la funcion fibonacci, que dado un número, devuelva el término correspondiente en la serie de Fibonacci.
+
+La serie de Fibonacci es una sucesión infinita de números en la que cada término es la suma de los dos términos anteriores. La serie comienza con los números 0 y 1, y los términos siguientes se calculan sumando los dos términos anteriores. Por ejemplo, los primeros 10 términos de la serie son: 0, 1, 1, 2, 3, 5, 8, 13, 21, 34.
+
+Definir una función rellenar que dado un string, un número y un caracter, agrega ese caracter al final del string hasta que el string resultante sea de longitud número. Si el string ya era de tamaño mayor o igual al número entonces esta función devuelve el string como se le pasó. Ej:
+
+> rellenar "hola" 7 '!'
+"hola!!!"
+Implementar la función dividir, que recibe un dividendo y un divisor, usando un algoritmo de restas sucesivas. El algoritmo, explicado de manera imperativa, funciona de la siguiente manera:
+
+Paso 1: Necesitamos un contador de cuantas veces se restó hasta llegar al resultado, así que necesitamos un contador de restas que comienza en 0.
+Paso 2: Si el dividendo es menor al divisor, se retorna el contador.
+Paso 3: Si no, restar el divisor al dividendo, y aumentar en 1 el contador de restas.
+Paso 4: Volver al paso 2.
+Adaptarlo al paradigma funcional.
+
+Parte 2: listas
+ultimaCarta: recibe una lista y devuelve el último elemento de la lista.
+
+primeras: recibe una lista y un número n y devuelve una nueva lista con los primeros n elementos de la lista original.
+
+cartasAColores: recibe una lista de cartas y devuelve una lista de los colores de esas cartas, en el mismo orden en el que se encontraban las cartas. Por ej:
+
+> cartasAColores [CartaNumerica 1 Rojo, CartaNumerica 2 Verde, CartaNumerica 3 Rojo]
+[Rojo, Verde, Rojo]
+obtenerElemento: recibe un numero y una lista, y devuelve el elemento con ese indice en la lista. Ej:
+
+> obtenerElemento 0 [1, 2, 3]
+1.0
+> obtenerElemento 2 [1, 2, 3, 4, 5]
+3.0
+> obtenerElemento 1 ["hola", "chau"]
+"chau"
+sacarHastaEncontrar: recibe una lista de cartas y una carta, devuelve todas las cartas en la lista hasta encontrar la carta buscada. Ej:
+> sacarHastaEncontrar (CartaNumerica 5 Rojo) [CartaNumerica 2 Azul, CartaEspecial Reversa Rojo, CartaNumerica 5 Rojo, CartaNumerica 4 Amarillo, CartaNumerica 0 Verde]
+[CartaNumerica 2 Azul, CartaEspecial Reversa Rojo, CartaNumerica 5 Rojo]
+Si la carta no está, devuelve todas las cartas pasadas.
+
+lasRojas: dada una lista de cartas, retorna una lista con solo aquellas que son rojas. Ej:
+> lasRojas [CartaNumerica 5 Rojo, CartaNumerica 2 Azul, CartaEspecial Reversa Rojo, CartaNumerica 4 Amarillo]
+[CartaNumerica 5 Rojo, CartaEspecial Reversa Rojo]
+lasQueSonDeColor: dada una lista de cartas y un color, retorna una lista con solo aquellas que son de ese color. Ej:
+> lasQueSonDeColor Azul [CartaNumerica 5 Rojo, CartaNumerica 2 Azul, CartaEspecial Reversa Rojo, CartaNumerica 4 Amarillo]
+[CartaNumerica 2 Azul]
+lasFiguras: dada una lista de cartas, retorna una lista con solo aquellas que tengan figuras. Ej:
+> lasFiguras [CartaNumerica 5 Rojo, CartaNumerica 2 Azul, CartaEspecial Reversa Rojo, CartaNumerica 4 Amarillo]
+[CartaEspecial Reversa Rojo]
+sumatoria: dado una lista de números, los suma. Si la lista está vacía devuelve 0. No usar sum que es literalmente la misma función que queremos definir :). Ej:
+> sumatoria [1,2,3,4,5,6]
+21
+> sumatoria []
+0
+
+Tp 5:
+
+Parte 1: Animales
+Dado el siguiente tipo de datos:
+
+data Animal = Animal{
+    energia :: Number,
+    tipo :: Tipo,
+    peso :: Number
+} deriving(Show, Eq)
+
+data Tipo = Volador| Terrestre | Acuatico deriving(Show, Eq)
+Vamos a querer modelar y tipar:
+
+PARTE 1: Animales
+losDeTipo: recibe un tipo y una lista de animales y nos devuelve aquellos que son de ese tipo. Por Ej:
+> tigre = Animal 5 Terrestre 120
+> lechuza = Animal 40 Volador 10
+> tiburon = Animal 100 Acuatico 100
+> losDeTipo Acuatico [tigre, lechuza, tiburon]
+[tiburon]
+animalesHambrientos: dada una lista de animales, nos devuelve solo aquellos que tienen hambre. Que un animal tenga hambre significa que su energía es menor a 10.
+
+entrenar:
+
+Si el animal es terrestre disminuye el peso y la energia en 5.
+
+Si el animal es volador solo disminuye su peso en 3.
+
+Si el animal es acuatico no hace nada porque es re jodido entrenar un animal acuatico.
+
+Por ej.:
+
+   > entrenar (Animal 140 Terrestre 30)
+   Animal 135 Terrestre 25
+   > entrenar (Animal 100 Acuatico 100)
+   Animal 100 Acuatico 100
+PARTE 2: Alimentos y entrenamientos
+Queremos modelar los siguientes alimentos:
+
+baya : aumenta en 5 la energía y el peso en 0.1
+
+carne : aumenta en 20 la energía y el peso en 2
+
+alimentarATodos: Recibe un alimento y una lista de animales y los alimenta a todos. Ej:
+
+> alimentarATodos baya [Animal 100 Acuatico 100, Animal 30 Terrestre 20]
+[Animal 105 Acuatico 100.1, Animal 35 Terrestre 20.1]
+aplicarItinerario : Dado un animal y una lista de alimentos y entrenamietos se los aplica a todos en orden (haciendo que el animal sufra todos los efectos). Ej: hacer comer una baya, comer carne, luego entrenar 2 veces y finalmente comer otra baya a un leon(energia = 40, tipo = Terrestre, peso = 200) me dejaria un leon(energia= 60, tipo = Terrestre, peso= 192.2). Ejemplo en codigo:
+> aplicarItinerario [entrenar, entrenar] (Animal 25 Terrestre 120)
+Animal 15 Terrestre 110
+Como poner en la lista del itinerario que coma una baya o que coma carne depende de como hayan modelado las bayas y la carne.
+PARTE 3: Nuestras propias funciones de orden superior
+En este punto ustedes van a definir funciones que reciban funciones por parámetro:
+
+mapTupla: recibe una función y una tupla de dos elementos del mismo tipo, y devuelve una tupla con los resultados de aplicar la función a cada valor:
+
+> mapTupla length ("hola", "mundo")
+(4, 5)
+menorSegun: recibe una función y dos valores del mismo tipo. menorSegun devuelve aquel valor cuyo resultado al ser aplicado a la función es menor. Por ej:
+
+> menorSegun length "hola" "mundo"
+"hola" -- porque (length "hola") es 4 y (length "mundo") es 5
+> menorSegun even 4 3
+3 -- porque False es menor que True en Haskell
+> menorSegun length "hola" "chau"
+"hola" -- si ambos dan lo mismo, devolver el primero
+minimoSegun: dada una lista y una función, devuelve el menor de toda la lista según la función que se pasó. Por ej:
+
+> minimoSegun length ["hola", "ornitorrinco", "a"]
+"a"
+> minimoSegun energia [tigre, lechuza, tiburon]
+Animal 5 Terrestre 120 -- el tigre
+aplicarVeces: dada un número de veces a aplicar, una funcion y un valor. Aplica el valor como parametro a la funcion tantas veces como dice el número.
+
+Por ej, si la función fuese siguiente, el numero de veces fuese 2 y el valor fuese 1, sería lo mismo que hacer: (siguiente (siguiente 1)).
+
+Si el número de veces fuese 3: (siguiente (siguiente (siguiente 1))).
+
+Ejemplo con código:
+
+> siguiente n = n + 1
+> aplicarVeces 3 siguiente 1
+4
+> aplicarVeces 3 (* 2) 1
+8
+> aplicarVeces 2 (++ "!") "hola"
+"hola!!"
+replicar: dado un numero y un valor, devuelve una lista con el valor dentro tantas veces como dice el número. Por ej:
+
+> replicar 3 "hola"
+["hola", "hola", "hola"]
+> replicar 2 True
+[True, True]
+Esta no es una función de orden superior, pero queremos que la definan usando alguna de las funciones de orden superior que ustedes definieron.
+
+PARTE 4: Bonus (OPCIONAL). Combinando funciones
+En esta parte vamos a aprovechar el orden superior para definir maneras mas interesantes de aplicar funciones que:
+
+funcion (otraFuncion (otraFuncionMas (valor)))
+Como primer cosa, queremos implementar el operador |>, que dado un valor a su izquierda y una función a su derecha, nos da el resultado de aplicar el valor a la función, por ejemplo:
+
+> "hola" |> length
+4
+> 5 |> (3 +)
+8
+Una vez que tenemos esto definido, vamos a definir un par de funciones para trabajar con texto:
+
+esVocal: dado un caracter, nos devuelve True si es a, e, i, o, u, A, E, I, O, o U y False si es cualquier otro caracter. Ojo, los caracteres y los strings en haskell se escriben distinto, con comillas dobles "" escriben un string (o lista de caracteres) y con comillas simples '' escriben un caracter. Ejemplo:
+
+> esVocal 'a'
+True
+> esVocal 'f'
+False
+Pista: pueden usar elem (busquenla en la guía de lenguajes) para no tener que repetir demasiados chequeos.
+
+primeraLinea: dado un string, me devuelve ese string hasta el primer caracter de salto de linea (\n) que se encuentre. Pista: pueden usar takeWhile que recibe una condicion y una lista y devuelve una lista de todos los elementos hasta antes del primero que no cumple la condición. Ejemplo:
+
+> primeraLinea "hola\nmundo"
+"hola"
+> primeraLinea "como\nva\neso?"
+"como"
+lasVocales: dado un string, me devuelve otro string con las vocales del primero en orden. Ejemplo:
+
+> lasVocales "murcielago"
+"uieao"
+> lasVocales "Aeea yo soy sabalero"
+"Aeeaooaaeo"
+contarVocalesDeLaPrimerLinea: dado un string, me devuelve la cantidad de vocales que se encuentran en la primer linea. Ejemplo
+
+> contarVocalesDeLaPrimerLinea "Aeea,\n yo soy sabalero"
+4
+> contarVocalesDeLaPrimerLinea "hola\ncomo\nva"
+2
+Esta función requiere que usen las que definieron acá arriba (y también length), pero traten de definirla tanto aplicando una función atrás de otra con paréntesis, como con |> de esta manera:
+
+valor |> primeraFuncion |> segundaFuncion
+
+como para que puedan comparar como queda.
+
+Casi que acabamos de definir sintaxis nueva para el lenguaje!
+
+Tp 6:
+
+Parte 1: Hamburguesas
+Nos pusimos una hamburguesería y queremos implementar un sistema para calcular los precios de las hamburguesas que vamos a vender. Cada hamburugesa tiene un precio base y una lista de ingredientes.
+
+El precio final de una hamburguesa es la sumatoria de los precios de los ingredientes + el precio base.
+
+Carne = 20
+Pan = 2
+Panceta = 10
+Cheddar = 10
+Pollo = 10
+Curry = 5
+QuesoDeAlmendras = 15
+cuartoDeLibra = es una hamburguesa de pan, carne, cheddar, pan y su precio base es de 20.
+
+Partiendo de esto modelamos:
+
+Agrandar: cada vez que se agranda una hamburguesa se agrega otro ingrediente base (Carne | Pollo), se elige el ingrediente base a agregar según lo que ya haya en la hamburguesa (si había carne se agrega carne, si había pollo se agrega pollo, si había ambos da igual cual se agregue).
+AgregarIngrediente: recibe un ingrediente y una hambrugesa lo agrega a la hamburguesa.
+descuento: recibe un % de descuento, y devuelve la hamburguesa con ese descuento aplicado al precio base.
+la pdepBurguer que es un cuarto de libra agrandado 2 veces con panceta, cheddar y 20% de descuento. Su precio final deberia ser 110
+
+PARTE 2: Algunas hamburguesas más
+El negocio se agrando y queremos agregar las siguientes hamburguesas:
+
+dobleCuarto = es un cuarto de libra con carne y cheddar. El precio final deberia ser 84.
+bigPdep = es un doble cuarto con curry. El precio final deberia ser 89.
+delDia = es una promo que dada una hamburguesa, le agrega Papas y un descuento del 30%. Por ej, podría pedir una big pdep del dia y debería ser como una big pdep (doble cuarto con curry) pero con papas y el descuento del 30%. Por ejemplo una doble cuarto del dia deberia valer 88.
+Las papas son un ingrediente que cuesta $10.
+
+PARTE 3: algunos cambios más
+Queremos modelar los siguientes modificadores:
+
+hacerVeggie : cambia todos los ingredientes base que hayan en la hamburguesa por PatiVegano (ingrediente base tambien de precio 10), el cheddar lo cambia por queso de almendras y luego elimina cualquier ingrediente que haya quedado que sea carnívoro (por ahora son ingredientes carnívoros la Carne, el Pollo y la Panceta).
+
+cambiarPanDePati : cambia el Pan que haya en la hamburguesa por PanIntegral (ingrediente de precio 3).
+
+hacer el dobleCuartoVegano que es un dobleCuarto veggie con pan integral.
