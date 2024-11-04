@@ -1,0 +1,12 @@
+{"level":"info","message":"⌛ Building environment","timeElapsed":607,"timestamp":"2024-11-03T22:47:16.893Z"}
+{"level":"info","message":"onRequest - WORKSPACE_URI:file:///c%3A/Users/mirid/Desktop/UTN/PDP/OBJETOS/Parciales/vikingos","timestamp":"2024-11-03T22:47:16.938Z"}
+{"level":"info","message":"⌛ Building environment","timeElapsed":354,"timestamp":"2024-11-03T22:47:17.294Z"}
+{"level":"info","message":"⌛ Building environment","timeElapsed":268,"timestamp":"2024-11-03T22:47:17.591Z"}
+{"level":"info","message":"⌛ Validating src/tp.wlk","timeElapsed":347,"timestamp":"2024-11-03T22:47:17.940Z"}
+{"level":"info","message":"⌛ Building environment","timeElapsed":195,"timestamp":"2024-11-03T22:47:18.137Z"}
+{"level":"info","message":"⌛ Validating src/tp0.wtest","timeElapsed":295,"timestamp":"2024-11-03T22:47:18.455Z"}
+{"level":"info","message":"⌛ Validating src/tp.wlk","timeElapsed":283,"timestamp":"2024-11-03T22:47:18.740Z"}
+{"level":"info","message":"⌛ Validating src/tp0.wtest","timeElapsed":497,"timestamp":"2024-11-03T22:47:19.241Z"}
+{"level":"info","message":"⌛ Building environment","timeElapsed":740,"timestamp":"2024-11-03T22:48:26.356Z"}
+{"level":"info","message":"⌛ Validating src/tp.wlk","timeElapsed":1203,"timestamp":"2024-11-03T22:48:27.563Z"}
+{"level":"info","message":"⌛ Validating src/tp0.wtest","timeElapsed":1719,"timestamp":"2024-11-03T22:48:29.510Z"}
